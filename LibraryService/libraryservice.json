@@ -1,0 +1,6 @@
+{
+  "id": "library-id",
+  "name": "library-service",
+  "Address": "localhost",
+  "port": 7000
+}

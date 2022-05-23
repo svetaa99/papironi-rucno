@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "UserService";
+
+service GrpcUser {
+  rpc IsLoggedIn(IsLoggedInRequest) returns (IsLoggedInResponse);
+  rpc GetAuthorName(GetAuthorNameRequest) returns (GetAuthorNameResponse);
+}
+
+message IsLoggedInRequest {
+  string jwt = 1;
+}
+
+message IsLoggedInResponse {
+  bool IsLoggedIn = 1;
+}
+
+message GetAuthorNameRequest {
+  string jwt = 1;
+}
+
+message GetAuthorNameResponse {
+  string Author = 1;
+}

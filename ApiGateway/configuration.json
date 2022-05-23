@@ -1,0 +1,120 @@
+{
+  "Routes":[
+    {
+        "DownstreamPathTemplate":"/User",
+        "DownstreamScheme":"http",
+        "DownstreamHostAndPorts":[
+          {
+              "Host":"localhost",
+              "Port":"5000"
+          }
+        ],
+        "UpstreamPathTemplate":"/UserService",
+        "UpstreamHttpMethod":[
+          
+        ],
+        "ServiceName": "user-service",
+        "LoadBalancerOptions": {
+            "Type": "LeastConnection"
+        }
+    },
+    {
+        "DownstreamPathTemplate":"/User/{everything}",
+        "DownstreamScheme":"http",
+        "DownstreamHostAndPorts":[
+          {
+              "Host":"localhost",
+              "Port":"5000"
+          }
+        ],
+        "UpstreamPathTemplate":"/UserService/{everything}",
+        "UpstreamHttpMethod":[
+          
+        ],
+        "ServiceName": "user-service",
+        "LoadBalancerOptions": {
+            "Type": "LeastConnection"
+        }
+    },
+    {
+        "DownstreamPathTemplate":"/Papers",
+        "DownstreamScheme":"http",
+        "DownstreamHostAndPorts":[
+          {
+              "Host":"localhost",
+              "Port":"6000"
+          }
+        ],
+        "UpstreamPathTemplate":"/SciPaperService",
+        "UpstreamHttpMethod":[
+          
+        ],
+        "ServiceName": "scipaper-service",
+        "LoadBalancerOptions": {
+            "Type": "LeastConnection"
+        }
+    },
+    {
+        "DownstreamPathTemplate":"/Papers/{everything}",
+        "DownstreamScheme":"http",
+        "DownstreamHostAndPorts":[
+          {
+              "Host":"localhost",
+              "Port":"6000"
+          }
+        ],
+        "UpstreamPathTemplate":"/SciPaperService/{everything}",
+        "UpstreamHttpMethod":[
+          
+        ],
+        "ServiceName": "scipaper-service",
+        "LoadBalancerOptions": {
+            "Type": "LeastConnection"
+        }
+    },
+    {
+        "DownstreamPathTemplate":"/PublishedPapers",
+        "DownstreamScheme":"http",
+        "DownstreamHostAndPorts":[
+          {
+              "Host":"localhost",
+              "Port":"7000"
+          }
+        ],
+        "UpstreamPathTemplate":"/LibraryService",
+        "UpstreamHttpMethod":[
+          
+        ],
+        "ServiceName": "library-service",
+        "LoadBalancerOptions": {
+            "Type": "LeastConnection"
+        }
+    },
+    {
+        "DownstreamPathTemplate":"/PublishedPapers/{everything}",
+        "DownstreamScheme":"http",
+        "DownstreamHostAndPorts":[
+          {
+              "Host":"localhost",
+              "Port":"7000"
+          }
+        ],
+        "UpstreamPathTemplate":"/LibraryService/{everything}",
+        "UpstreamHttpMethod":[
+          
+        ],
+        "ServiceName": "library-service",
+        "LoadBalancerOptions": {
+            "Type": "LeastConnection"
+        }
+    }
+  ],
+  "GlobalConfiguration": {
+    "ServiceDiscoveryProvider": {
+        "Scheme": "http",
+        "Host": "localhost",
+        "Port": 8500,
+        "Type": "Consul"
+    }
+  }
+}

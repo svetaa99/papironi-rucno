@@ -1,0 +1,6 @@
+{
+  "id": "user-id",
+  "name": "user-service",
+  "Address": "localhost",
+  "port": 5000
+}

@@ -1,0 +1,6 @@
+{
+  "id": "scipaper-id",
+  "name": "scipaper-service",
+  "Address": "localhost",
+  "port": 6000
+}
